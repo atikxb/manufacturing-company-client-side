@@ -21,18 +21,18 @@ const Header = () => {
                             <Link class="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/blogs">Blogs</Link>
+                            <Link class="nav-link active" to="/blogs">Blogs</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/portfolio">My porfolio</Link>
+                            <Link class="nav-link active" to="/portfolio">My porfolio</Link>
                         </li>
                         <li class="nav-item dropdown">
-                            <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link class="nav-link active dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown link
                             </Link>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><Link class="dropdown-item" to="/dashboard">Dashboard</Link></li>
-                                <li><button class="dropdown-item">Logout</button></li>
+                                <li><Link class="dropdown-item active" to="/dashboard">Dashboard</Link></li>
+                                <li><button class="dropdown-item active">Logout</button></li>
                             </ul>
                         </li>
                     </ul>
