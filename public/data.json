@@ -1,0 +1,50 @@
+[
+    {
+        "name": "INTEL CORE I5 12TH GEN PROCESSOR",
+        "details": "The 12th Generation Of Intel Core Processors Are Here! The I5-12500 Allows You To Compete With Confidence Or Get Immersed In New Worlds With A Revolutionary Processor Architecture That Focuses On What Matters More - Gaming! This Processor Is Able To Give You Excellent Performance. The 12th Generations CPU's Are Compatible With Most 600 Series Motherboards And Support PCIe Gen 5, You Can Also Take Advantage Of DDR5 Memory And Great Features Like Intel Turbo Boost Max Technology 3.0.",
+        "minQuantity": 100,
+        "quantity": 1500,
+        "price": 23800,
+        "img": "https://www.techlandbd.com/image/cache/catalog/Processor/Intel/12th%20Gen/Alder%20Lake/INTEL%20CORE%20I5%2012500-01.jpg-550x550.jpg"
+    },
+    {
+        "name": "Gigabyte X570S UD AMD Motherboard",
+        "details": "Gigabyte X570S UD Motherboard Supports With AMD Ryzen 5000 Series/ Ryzen 5000 G-Series/ Ryzen 4000 G-Series/ Ryzen 3000 Series/ Ryzen 3000 G-Series/ Ryzen 2000 Series/ Ryzen 2000 G-Series Processors, Dual Channel ECC/ Non-ECC Unbuffered DDR4, 4 DIMMs. This Motherboard Comes With Twin 12+2 Phases Digital VRM Solution With 50A DrMOS, ",
+        "minQuantity": 50,
+        "quantity": 1200,
+        "price": 23000,
+        "img": "https://www.techlandbd.com/image/cache/catalog/Motherboard/Gigabyte/%20X570S%20UD/x570s-ud-01-500x500.jpg-550x550.jpg"
+    },
+    {
+        "name": "Silicon 16GB (8 X 2) 3200Mhz Gaming RAM",
+        "details": "Silicon Power DDR4 UDIMM Is Compatible With The Intel Haswell-E Platform And X99 Series Motherboards Also Like The Intel Skylake Platform And 100 Series Motherboards. Silicon Power XPower Turbine 16GB 3200Mhz RAM Enables Higher Performance And Stability For Advanced Gamers, Multimedia Pros, And DIY Enthusiasts And Allows You To Experience Super-Fast Data Transfer Rates With 17GB/S Of Bandwidth, Which Is 33% Faster Than DDR3-1600.",
+        "minQuantity": 250,
+        "quantity": 2500,
+        "price": 8700,
+        "img": "https://www.techlandbd.com/image/cache/catalog/RAM/silicon%20power%20/xpower-turbine/silicon-power-xpower-turbine-16.jpg-550x550.jpg"
+    },
+    {
+        "name": "Gigabyte AORUS M.2 1TB Gaming SSD",
+        "details": "The World First PCIe 4.0x4 Controller, Phison PS5016-E16 Controller, Made By 28nm Manufacturing Technology. The Advanced Fabrication Process Ensures PS5016-E16 Has Enough Compute Power For ECC Processing When Adopting The Latest 3D TLC NAND Flash. PS5016-E16 Also Features Eight NAND Channels With 32 CE Targets, DDR4 DRAM Caching, And A PCIe 4.0x4 Interface. As For Features, The Chip Supports The NVMe 1.3 Protocol, LDPC Error Correction, And Wear Leveling, Over-Provision Technologies To Improve Reliability And Durability Of SSDs.",
+        "minQuantity": 140,
+        "quantity": 1800,
+        "price": 16499,
+        "img": "https://www.techlandbd.com/image/cache/catalog/SSD/GIGABYTE/Gen4/aorus-gen4-ssd.png-550x550.png"
+    },
+    {
+        "name": "SAPPHIRE NITRO+ AMD RADEON RX 6950 XT GRAPHICS CARD",
+        "details": "The NITRO+ AMD Radeon™ RX 6950 XT SE Delivers Powerhouse 4K Gaming Performance With Vivid Visuals For An Elevated Experience. The All-New Innovative Wave Fin Design Working In Tandem With Our V-Shape Fin Design For GPU Cooling Reduces Wind Friction And Centralizes Airflow For Optimal Heat Dissipation And A Virtually Silent System.",
+        "minQuantity": 10,
+        "quantity": 120,
+        "price": 164900,
+        "img": "https://www.techlandbd.com/image/cache/catalog/Graphics%20Card/Sapphire/nitro-amd-radeon-rx-6900-xt-se/sapphire-nitro-radeon-rx-6950-xt-gaming-oc-16-gb.jpg-550x550.jpg"
+    },
+    {
+        "name": "OVO V335D MID Tower Gaming Casing",
+        "details": "OVO V335D  ATX Mid Tower Gaming PC Case Featured With Static Rainbow Fan X 4 Pre- Installed, Unique Mesh Front Panel, High Tailwind, And Tempered Glass Side Panel. This OVO Gaming Cases Has 7 Expansion Places",
+        "minQuantity": 120,
+        "quantity": 950,
+        "price": 3200,
+        "img": "https://www.techlandbd.com/image/cache/catalog/Casing/ovo/OVO%20V335D-11.jpg-550x550.jpg"
+    }
+]

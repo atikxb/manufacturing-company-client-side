@@ -1,0 +1,52 @@
+@media(max-width:778px) {
+    #hero {
+        background: url(../image/cta-bg.jpg) no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        height: 60vh;
+        position: relative;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1pxsolidrgba(0, 0, 0, .125);
+        border-radius: .25rem;
+        margin: 10px 0xp;
+    }
+    .content h3 {
+        font-size: 20px;
+        line-height: 31px;
+    }
+    .Business_text p {
+        font-size: 13px;
+    }
+    .testimonial-text h2 {
+        font-weight: 100;
+        font-size: 30px;
+    }
+    .testimonial-text h6 {
+        font-size: 11px;
+    }
+    .hero_text h1 {
+        width: auto;
+        margin: auto;
+        line-height: 33px;
+        font-size: 25px;
+        text-transform: uppercase;
+        padding-top: 60px;
+    }
+    .businnes_image {
+        margin-top: 40px;
+    }
+}
+
+.bg-danger {
+    --bs-bg-opacity: 1;
+    background-color: #0d6efd !important;
+}
