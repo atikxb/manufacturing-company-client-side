@@ -9,7 +9,7 @@ const Checkout = ({ order }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     console.log(clientSecret);
-    const { price, _id } = order;
+    const { price, _id, status } = order;
     useEffect(() => {
         fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
@@ -79,25 +79,26 @@ const Checkout = ({ order }) => {
         }
     }
     return (
-        <div className='container'>
+        <div>
             <form onSubmit={handleSubmit}>
-                <CardElement
-                    options={{
-                        style: {
-                            base: {
-                                fontSize: '16px',
-                                color: '#424770',
-                                '::placeholder': {
-                                    color: '#aab7c4',
+                <p>Please enter card details below:</p>
+                    <CardElement className='form-control py-3'
+                        options={{
+                            style: {
+                                base: {
+                                    fontSize: '16px',
+                                    color: '#424770',
+                                    '::placeholder': {
+                                        color: '#aab7c4',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
                                 },
                             },
-                            invalid: {
-                                color: '#9e2146',
-                            },
-                        },
-                    }}
-                />
-                <button className='btn btn-primary' type="submit" disabled={!stripe || !elements || !clientSecret}>
+                        }}
+                    />
+                <button className='btn btn-success mt-2' type="submit" disabled={!stripe || !elements || !clientSecret || status !== 'unpaid' }>
                     Pay
                 </button>
             </form>

@@ -34,10 +34,10 @@ const OrderRow = ({ index, order, refetch }) => {
             <td>{price}</td>
             <td>{status}</td>
             <td>{
-                status === 'Unpaid' && <Link to={`/dashboard/payment/${_id}`}  className='btn btn-success'>Make Payment</Link>
+                status === 'unpaid' && <Link to={`/dashboard/payment/${_id}`}  className='btn btn-success'>Make Payment</Link>
             }</td>
             <td>{
-                status === 'Unpaid' && <button onClick={handleShow} className='btn btn-danger'>Cancel</button>
+                status === 'unpaid' && <button onClick={handleShow} className='btn btn-danger'>Cancel</button>
             }</td>
             <Confirmation show={show} handleClose={handleClose} handleDelete={handleDelete} />
         </tr>
