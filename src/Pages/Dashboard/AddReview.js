@@ -9,7 +9,7 @@ const AddReview = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async data => {
         const review = {name: user?.displayName || user?.email, rating: data.rating, review: data.review};
-        fetch('http://localhost:5000/review', {
+        fetch('https://afternoon-savannah-56970.herokuapp.com/review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

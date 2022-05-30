@@ -19,7 +19,7 @@ const Purcahse = () => {
         const order = {partsId: id, partsName: name, quantity: data.orderQuantity || minQuantity, price: (data.orderQuantity || minQuantity) * price, status: 'unpaid', displayName: data.name, email: data.email, address: data.address, number: data.number, others: data.others  };
         const remainQuantity = quantity - (data.orderQuantity || minQuantity);
         console.log(remainQuantity);
-        fetch('http://localhost:5000/order', {
+        fetch('https://afternoon-savannah-56970.herokuapp.com/order', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

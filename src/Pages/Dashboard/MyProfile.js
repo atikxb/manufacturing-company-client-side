@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { isLoading, refetch, data: currentUser } = useQuery(['payment', user?.email], () =>
-        fetch(`http://localhost:5000/user/${user?.email}`, {
+        fetch(`https://afternoon-savannah-56970.herokuapp.com/user/${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -22,7 +22,7 @@ const MyProfile = () => {
     const onSubmit = async data => {
         const updatedUser = { education: data.education, location: data.location, number: data.number, linkedin: data.linkedin };
         console.log(updatedUser);
-        fetch(`http://localhost:5000/user/${user?.email}`, {
+        fetch(`https://afternoon-savannah-56970.herokuapp.com/user/${user?.email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

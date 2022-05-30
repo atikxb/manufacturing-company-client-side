@@ -22,4 +22,4 @@
 <li>React hook form</li>
 <li>React Query</li>
 </ul>
-<h3>Live link: </h3>
+<h3>Live link: https://computer-manufacturing-company.web.app/</h3>

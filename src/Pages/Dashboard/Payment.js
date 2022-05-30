@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_1mOWshLTI5MpRnKCqePuHEG600FVdGd5NS');
 const Payment = () => {
     const { id } = useParams();
     const { isLoading, refetch, data: order } = useQuery(['payment', id], () =>
-        fetch(`http://localhost:5000/payment/${id}`, {
+        fetch(`https://afternoon-savannah-56970.herokuapp.com/payment/${id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

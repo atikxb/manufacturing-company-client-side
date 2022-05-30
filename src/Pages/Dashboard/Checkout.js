@@ -13,7 +13,7 @@ const Checkout = ({ order, refetch }) => {
     console.log(clientSecret);
     const { price, _id, status } = order;
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://afternoon-savannah-56970.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -66,7 +66,7 @@ const Checkout = ({ order, refetch }) => {
             setCardError('');
             setTransactionId(paymentIntent.id);
             const payment = { orderId: _id, transactionId: paymentIntent.id, price: price }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://afternoon-savannah-56970.herokuapp.com/order/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

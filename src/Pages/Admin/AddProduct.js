@@ -25,7 +25,7 @@ const AddProduct = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const parts = { name, details, minQuantity, quantity, price, img };
-                    fetch('http://localhost:5000/add-parts', {
+                    fetch('https://afternoon-savannah-56970.herokuapp.com/add-parts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

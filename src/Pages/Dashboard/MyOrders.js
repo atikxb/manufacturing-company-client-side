@@ -9,7 +9,7 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const { isLoading, refetch, data: myorders } = useQuery(['doctors', user?.email], () =>
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        fetch(`https://afternoon-savannah-56970.herokuapp.com/orders?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
