@@ -26,6 +26,9 @@ const Header = () => {
                         <li class="nav-item">
                             <Link class="nav-link active" to="/portfolio">My porfolio</Link>
                         </li>
+                        <li class="nav-item">
+                            <Link class="nav-link active" to="/login">Login</Link>
+                        </li>
                         <li class="nav-item dropdown">
                             <Link class="nav-link active dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown link
