@@ -4,6 +4,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import Purcahse from './Pages/Purchase/Purcahse';
 import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/purchase/:id" element={<Purcahse />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer/>  
