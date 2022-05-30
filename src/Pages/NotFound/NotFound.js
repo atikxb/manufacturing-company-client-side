@@ -4,19 +4,11 @@ import Header from '../Shared/Header/Header';
 const NotFound = () => {
     return (
         <main>
-            <Header/>
-        <section style={{padding: '200px 0'}}>
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="not-found text-center">
-                            <h1>404</h1>
-                            <h4>Not Found</h4>
-                        </div>
-                    </div>
-                </div>
+            <Header />
+            <div style={{ height: '80vh' }} className='section-padding'>
+                <img className="m-auto d-block" width='100%' src="./vendor/image/404.png" alt="not found" />
+                <h3 className="text-center">Page Not Found</h3>
             </div>
-        </section>
         </main>
     );
 };

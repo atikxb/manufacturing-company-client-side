@@ -13,7 +13,6 @@ const AddProduct = () => {
         const price = event.target.price.value;
         const details = event.target.details.value;
         const img = event.target.image.files[0];
-        console.log(name, minQuantity, quantity, price, details, img);
         const formData = new FormData();
         formData.append('image', img);
         const url = `https://api.imgbb.com/1/upload?key=${imageAPIKey}`;

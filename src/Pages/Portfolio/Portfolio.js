@@ -15,9 +15,9 @@ const Portfolio = () => {
                         <div className="col-lg-6">
                             <div className="content">
                                 <h3>Mohammad Atikul Islam</h3>
-                                <p>Education: BSc in CSE from AIUB</p>
                                 <p>Email: atikxb@gmail.com</p>
                                 <p>Phone: 01764760765</p>
+                                <p>Education: BSc in CSE from AIUB</p>
                             </div>
                         </div>
                         <div className="col-lg-6">
