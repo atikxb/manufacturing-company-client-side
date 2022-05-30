@@ -20,14 +20,23 @@ const Register = () => {
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordError, setpasswordError] = useState('');
     const [rePassword, setRePassword] = useState('');
-    const [passwordError, setPasswordError] = useState('');
+    const [rePasswordError, setRePasswordError] = useState('');
+    const handlePasswordOnBlur = e => {
+        setPassword(e.target.value);
+        if (e.target.value.length < 8) {
+            setpasswordError('Password must be 8 character or longer');
+        }
+        else { setpasswordError('');}
+
+    }
     const handleRePasswordOnBlur = e => {
         if (password === e.target.value) {
             setRePassword(e.target.value);
-            setPasswordError('');
+            setRePasswordError('');
         }
-        else { setPasswordError('Both password did not match'); }
+        else { setRePasswordError('Both password did not match'); }
 
     }
     const navigate = useNavigate();
@@ -38,20 +47,19 @@ const Register = () => {
     }, [token, from, navigate]);
     const handleRegister = async e => {
         e.preventDefault();
-        if (password === rePassword) {
-            setPasswordError('');
+        if (password.length > 8 && password === rePassword) {
+            setRePasswordError('');
             await createUserWithEmailAndPassword(email, password);
             await updateProfile({ displayName });
         }
-        else { setPasswordError('Both password did not match'); }
     }
     return (
         <main>
-            <Header/>
+            <Header />
             <section className="section-padding">
                 <div className="container">
-                <h1 className="text-center">Register</h1>
-                    <hr style={{width: '50px',margin: '0px auto 40px auto',height: '2px', backgroundColor: 'black'}}/>
+                    <h1 className="text-center">Register</h1>
+                    <hr style={{ width: '50px', margin: '0px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="form shadow-sm p-5">
@@ -68,12 +76,13 @@ const Register = () => {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="password" className="form-label">Password</label>
-                                        <input onBlur={(e) => setPassword(e.target.value)} type="password" className="form-control" name="password" id="password" required />
+                                        <input onBlur={handlePasswordOnBlur} type="password" className="form-control" name="password" id="password" required />
+                                        <p className='text-danger'>{passwordError}</p>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="repassword" className="form-label">Retype Password</label>
                                         <input onBlur={handleRePasswordOnBlur} type="password" className="form-control" name="repassword" id="repassword" required />
-                                        <p className='text-danger'>{passwordError}</p>
+                                        <p className='text-danger'>{rePasswordError}</p>
                                     </div>
 
 

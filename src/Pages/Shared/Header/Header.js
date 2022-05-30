@@ -13,11 +13,6 @@ const Header = () => {
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light py-3">
-            <div className="off_canves_button">
-                <button className="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <i className="bi bi-person-fill"></i>
-                </button>
-            </div>
             <div className="container">
 
                 <h3>DigiTech</h3>
@@ -38,7 +33,10 @@ const Header = () => {
                         {
                             loading ? <ButtonSpinner /> : <>
                                 {
-                                    user ? <li className="nav-item dropdown">
+                                    user ? <>
+                                    <li className="nav-item">
+                                    <Link className="nav-link active" to="/dashboard">Dashboard</Link>
+                                </li><li className="nav-item dropdown">
                                         <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Welcome, {user?.displayName || user?.email}
                                         </Link>
@@ -46,7 +44,8 @@ const Header = () => {
                                             <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li>
                                             <li><button onClick={() => logOut(auth)} className="dropdown-item">Logout</button></li>
                                         </ul>
-                                    </li> : <li className="nav-item">
+                                    </li>
+                                    </> : <li className="nav-item">
                                         <Link className="nav-link active" to="/login">Login</Link>
                                     </li>
                                 }

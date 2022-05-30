@@ -16,7 +16,7 @@ const Purcahse = () => {
     const [partsQuantity, setpartsQuantity] = useState(quantity);
     const [orderQuantity, setOrderQuantity] = useState(minQuantity);
     const onSubmit = async data => {
-        const order = {partsId: id, partsName: name, quantity: data.orderQuantity || minQuantity, displayName: data.name, email: data.email, address: data.address, number: data.number, others: data.others  };
+        const order = {partsId: id, partsName: name, quantity: data.orderQuantity || minQuantity, price: (data.orderQuantity || minQuantity) * price, status: 'Unpaid', displayName: data.name, email: data.email, address: data.address, number: data.number, others: data.others  };
         const remainQuantity = quantity - (data.orderQuantity || minQuantity);
         console.log(remainQuantity);
         fetch('http://localhost:5000/order', {
@@ -60,7 +60,7 @@ const Purcahse = () => {
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <div className="input_group">
                                         <label htmlFor="quantity">Order Quanity</label>
-                                        <input {...register("orderQuantity")} onBlur={(e) => setOrderQuantity(e.target.value)} type="number" id="quantity" className="form-control" defaultValue={minQuantity} defaultChecked/>
+                                        <input {...register("orderQuantity")} onChange={(e) => setOrderQuantity(e.target.value)} type="number" id="quantity" className="form-control" defaultValue={minQuantity} defaultChecked/>
                                         <p className='text-danger mt-2'>{(orderQuantity < minQuantity || orderQuantity > quantity) && <span>Quantity must be between {minQuantity}-{quantity}</span>}</p>
                                     </div>
                                     <div className="input_group">

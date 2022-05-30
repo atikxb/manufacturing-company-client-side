@@ -12,7 +12,6 @@ const Home = () => {
     return (
         <main>
             <Header />
-            <SideNav />
             <Banner />
             <About/>
             <Parts />
