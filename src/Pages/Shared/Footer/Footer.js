@@ -5,11 +5,11 @@ const Footer = () => {
     return (
         <footer id="footer">
 
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
+            <div className="footer-top">
+                <div className="container">
+                    <div className="row">
 
-                        <div class="col-lg-3 col-md-6 footer-contact">
+                        <div className="col-lg-3 col-md-6 footer-contact">
                             <h3>DigiTech</h3>
                             <p>
                                 A108 Adam Street <br /> New York, NY 535022<br /> United States <br /><br />
@@ -18,29 +18,29 @@ const Footer = () => {
                             </p>
                         </div>
 
-                        <div class="col-lg-2 col-md-6 footer-links">
+                        <div className="col-lg-2 col-md-6 footer-links">
                             <h4>Parts Categories</h4>
                             <ul>
-                                <li><i class="bx bx-chevron-right"></i> CPU</li>
-                                <li><i class="bx bx-chevron-right"></i> Ram</li>
-                                <li><i class="bx bx-chevron-right"></i> HDD</li>
-                                <li><i class="bx bx-chevron-right"></i> GPU</li>
-                                <li><i class="bx bx-chevron-right"></i> Motherboard</li>
+                                <li><i className="bx bx-chevron-right"></i> CPU</li>
+                                <li><i className="bx bx-chevron-right"></i> Ram</li>
+                                <li><i className="bx bx-chevron-right"></i> HDD</li>
+                                <li><i className="bx bx-chevron-right"></i> GPU</li>
+                                <li><i className="bx bx-chevron-right"></i> Motherboard</li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 footer-links">
+                        <div className="col-lg-3 col-md-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
-                                <li><i class="bx bx-chevron-right"></i> Terms & condition</li>
-                                <li><i class="bx bx-chevron-right"></i> Privacy policy</li>
-                                <li><i class="bx bx-chevron-right"></i> Delivery policy</li>
-                                <li><i class="bx bx-chevron-right"></i> Refund policy</li>
-                                <li><i class="bx bx-chevron-right"></i> Contact Us</li>
+                                <li><i className="bx bx-chevron-right"></i> Terms & condition</li>
+                                <li><i className="bx bx-chevron-right"></i> Privacy policy</li>
+                                <li><i className="bx bx-chevron-right"></i> Delivery policy</li>
+                                <li><i className="bx bx-chevron-right"></i> Refund policy</li>
+                                <li><i className="bx bx-chevron-right"></i> Contact Us</li>
                             </ul>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <div className="col-lg-4 col-md-6 footer-newsletter">
                             <h4>Reach Us</h4>
                             <p>Send your email address. We will contact you with future updates</p>
                             <form>
@@ -53,13 +53,13 @@ const Footer = () => {
             </div>
 
             <center>
-                <div class="container py-4">
-                    <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                        <Link to="/" class="facebook"><i class="bi bi-facebook text-warning"></i></Link>
-                        <Link to="/" class="twitter"><i class="bi bi-twitter text-warning"></i></Link>
-                        <Link to="/" class="instagram"><i class="bi bi-instagram text-warning"></i></Link>
-                        <Link to="/" class="google-plus"><i class="bi bi-google text-warning"></i></Link>
-                        <Link to="/" class="linkedin"><i class="bi bi-linkedin text-warning"></i></Link>
+                <div className="container py-4">
+                    <div className="social-links text-center text-md-right pt-3 pt-md-0">
+                        <Link to="/" className="facebook"><i className="bi bi-facebook text-warning"></i></Link>
+                        <Link to="/" className="twitter"><i className="bi bi-twitter text-warning"></i></Link>
+                        <Link to="/" className="instagram"><i className="bi bi-instagram text-warning"></i></Link>
+                        <Link to="/" className="google-plus"><i className="bi bi-google text-warning"></i></Link>
+                        <Link to="/" className="linkedin"><i className="bi bi-linkedin text-warning"></i></Link>
                     </div>
                 </div>
             </center>

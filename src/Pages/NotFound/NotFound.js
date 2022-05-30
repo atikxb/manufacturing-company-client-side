@@ -6,10 +6,10 @@ const NotFound = () => {
         <main>
             <Header/>
         <section style={{padding: '200px 0'}}>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="not-found text-center">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="not-found text-center">
                             <h1>404</h1>
                             <h4>Not Found</h4>
                         </div>

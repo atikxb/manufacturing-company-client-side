@@ -10,23 +10,23 @@ const Purcahse = () => {
     return (
         <main>
             <Header />
-            <section id="Business" class="p-5">
-                <div class="container">
-                    <h1 class="text-center">{id}</h1>
+            <section id="Business" className="p-5">
+                <div className="container">
+                    <h1 className="text-center">{id}</h1>
                     <hr style={{ width: '100px', margin: '-5px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
-                    <div class="row">
-                        <div class="col-lg-6">
+                    <div className="row">
+                        <div className="col-lg-6">
                             <img src={img} alt="" />
                         </div>
-                        <div class="col-lg-6">
+                        <div className="col-lg-6">
                             <h3>{name}</h3>
                             <p>{details}</p>
                             <h3>Price: ${price}</h3>
-                            <p class="badge bg-secondary me-2">Minimum Quantity: {minQuantity}</p>
-                            <p class="badge bg-secondary">Available Quantity: {quantity}</p>
+                            <p className="badge bg-secondary me-2">Minimum Quantity: {minQuantity}</p>
+                            <p className="badge bg-secondary">Available Quantity: {quantity}</p>
                             <br />
-                            <button class="btn btn-primary">Update</button>
-                            <button class="btn btn-warning">Delete</button>
+                            <button className="btn btn-primary">Update</button>
+                            <button className="btn btn-warning">Delete</button>
                         </div>
                     </div>
 

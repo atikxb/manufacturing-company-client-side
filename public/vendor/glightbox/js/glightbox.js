@@ -1780,7 +1780,7 @@
     var slideMedia = slide.querySelector('.gslide-media');
     var videoPlayers = this.getAllPlayers();
     addClass(slideContainer, 'gvideo-container');
-    slideMedia.insertBefore(createHTML('<div class="gvideo-wrapper"></div>'), slideMedia.firstChild);
+    slideMedia.insertBefore(createHTML('<div className="gvideo-wrapper"></div>'), slideMedia.firstChild);
     var videoWrapper = slide.querySelector('.gvideo-wrapper');
     injectAssets(this.settings.plyr.css, 'Plyr');
     var url = data.href;
@@ -1815,7 +1815,7 @@
         html += 'x-webkit-airplay="allow" ';
         html += 'playsinline ';
         html += 'controls ';
-        html += 'class="gvideo-local">';
+        html += 'className="gvideo-local">';
         var format = url.toLowerCase().split('.').pop();
         var sources = {
           mp4: '',
@@ -1904,7 +1904,7 @@
 
     if (content) {
       if (isString(content)) {
-        innerContent = createHTML("<div class=\"ginlined-content\">".concat(content, "</div>"));
+        innerContent = createHTML("<div className=\"ginlined-content\">".concat(content, "</div>"));
       }
 
       if (isNode(content)) {
@@ -2365,7 +2365,7 @@
         }
 
         div = null;
-        return subString + '... <a href="#" class="desc-more">' + wordBoundary + '</a>';
+        return subString + '... <a href="#" className="desc-more">' + wordBoundary + '</a>';
       }
     }, {
       key: "descriptionEvents",
@@ -2530,8 +2530,8 @@
       prev: '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175" xml:space="preserve"><g><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/></g></svg>'
     }
   };
-  defaults.slideHTML = "<div class=\"gslide\">\n    <div class=\"gslide-inner-content\">\n        <div class=\"ginner-container\">\n            <div class=\"gslide-media\">\n            </div>\n            <div class=\"gslide-description\">\n                <div class=\"gdesc-inner\">\n                    <h4 class=\"gslide-title\"></h4>\n                    <div class=\"gslide-desc\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
-  defaults.lightboxHTML = "<div id=\"glightbox-body\" class=\"glightbox-container\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"false\">\n    <div class=\"gloader visible\"></div>\n    <div class=\"goverlay\"></div>\n    <div class=\"gcontainer\">\n    <div id=\"glightbox-slider\" class=\"gslider\"></div>\n    <button class=\"gclose gbtn\" aria-label=\"Close\" data-taborder=\"3\">{closeSVG}</button>\n    <button class=\"gprev gbtn\" aria-label=\"Previous\" data-taborder=\"2\">{prevSVG}</button>\n    <button class=\"gnext gbtn\" aria-label=\"Next\" data-taborder=\"1\">{nextSVG}</button>\n</div>\n</div>";
+  defaults.slideHTML = "<div className=\"gslide\">\n    <div className=\"gslide-inner-content\">\n        <div className=\"ginner-container\">\n            <div className=\"gslide-media\">\n            </div>\n            <div className=\"gslide-description\">\n                <div className=\"gdesc-inner\">\n                    <h4 className=\"gslide-title\"></h4>\n                    <div className=\"gslide-desc\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
+  defaults.lightboxHTML = "<div id=\"glightbox-body\" className=\"glightbox-container\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"false\">\n    <div className=\"gloader visible\"></div>\n    <div className=\"goverlay\"></div>\n    <div className=\"gcontainer\">\n    <div id=\"glightbox-slider\" className=\"gslider\"></div>\n    <button className=\"gclose gbtn\" aria-label=\"Close\" data-taborder=\"3\">{closeSVG}</button>\n    <button className=\"gprev gbtn\" aria-label=\"Previous\" data-taborder=\"2\">{prevSVG}</button>\n    <button className=\"gnext gbtn\" aria-label=\"Next\" data-taborder=\"1\">{nextSVG}</button>\n</div>\n</div>";
 
   var GlightboxInit = function () {
     function GlightboxInit() {

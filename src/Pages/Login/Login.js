@@ -29,12 +29,13 @@ const Login = () => {
     const onSubmit = async data => {
         await signInWithEmailAndPassword(data.email, data.password);
     };
-    console.log(user);
     return (
         <main>
             <Header />
             <section className="section-padding">
                 <div className="container">
+                <h1 className="text-center">Login</h1>
+                    <hr style={{width: '50px',margin: '0px auto 40px auto',height: '2px', backgroundColor: 'black'}}/>
                     <div className="row">
                         <div className="col-lg-6 offset-lg-3">
                             <div className="form shadow-sm p-5">
