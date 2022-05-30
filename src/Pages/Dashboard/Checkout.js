@@ -1,13 +1,15 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import ButtonSpinner from '../Loading/ButtonSpinner';
 
-const Checkout = ({ order }) => {
+const Checkout = ({ order, refetch }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
-    const [success, setSuccess] = useState('');
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
+    const [loading, setLoading] = useState(false);
     console.log(clientSecret);
     const { price, _id, status } = order;
     useEffect(() => {
@@ -24,6 +26,7 @@ const Checkout = ({ order }) => {
     }, [price]);
     const handleSubmit = async event => {
         event.preventDefault();
+        setLoading(true);
         if (!stripe || !elements) {
             return;
         }
@@ -58,13 +61,10 @@ const Checkout = ({ order }) => {
         );
         if (intentError) {
             setCardError(intentError.message);
-            setSuccess('');
-
         }
         else {
             setCardError('');
             setTransactionId(paymentIntent.id);
-            setSuccess('Congrates! your payment successful');
             const payment = { orderId: _id, transactionId: paymentIntent.id, price: price }
             fetch(`http://localhost:5000/order/${_id}`, {
                 method: "PATCH",
@@ -75,35 +75,39 @@ const Checkout = ({ order }) => {
                 body: JSON.stringify(payment),
             })
                 .then((res) => res.json())
-                .then((data) => setClientSecret(data.clientSecret));
+                .then((data) => {
+                    // setClientSecret(data.clientSecret);
+                    refetch();
+                    paymentIntent.id && data.modifiedCount && toast.success("Your order is placed successfully");
+                    setLoading(false);
+                });
         }
     }
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <p>Please enter card details below:</p>
-                    <CardElement className='form-control py-3'
-                        options={{
-                            style: {
-                                base: {
-                                    fontSize: '16px',
-                                    color: '#424770',
-                                    '::placeholder': {
-                                        color: '#aab7c4',
-                                    },
-                                },
-                                invalid: {
-                                    color: '#9e2146',
+                <CardElement className='form-control py-3'
+                    options={{
+                        style: {
+                            base: {
+                                fontSize: '16px',
+                                color: '#424770',
+                                '::placeholder': {
+                                    color: '#aab7c4',
                                 },
                             },
-                        }}
-                    />
-                <button className='btn btn-success mt-2' type="submit" disabled={!stripe || !elements || !clientSecret || status !== 'unpaid' }>
-                    Pay
+                            invalid: {
+                                color: '#9e2146',
+                            },
+                        },
+                    }}
+                />
+                <button className='btn btn-success mt-2' type="submit" disabled={!stripe || !elements || !clientSecret || status !== 'unpaid'}>
+                    Pay {loading && <ButtonSpinner />}
                 </button>
             </form>
             {cardError && <p className='text-center text-danger'>{cardError}</p>}
-            {success && <><p className='text-center text-success'>{success}</p><p className='text-center text-success'>Your transaction Id: {transactionId}</p></>}
         </div>
     );
 };

@@ -37,7 +37,7 @@ const Payment = () => {
                                 <p>Status: {order.status}</p>
                             </Card.Text>
                             <Elements stripe={stripePromise}>
-                                <Checkout order={order} />
+                                <Checkout refetch={refetch} order={order} />
                             </Elements>
                         </Card.Body>
                     </Card>

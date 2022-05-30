@@ -7,7 +7,7 @@ const OrderRow = ({ index, order, refetch }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const { _id, partsName, price, quantity, status } = order;
+    const { _id, partsName, price, quantity, status, transactionId } = order;
     const handleDelete = () => {
         fetch(`http://localhost:5000/order/${_id}`, {
             method: 'DELETE',
@@ -34,11 +34,9 @@ const OrderRow = ({ index, order, refetch }) => {
             <td>{price}</td>
             <td>{status}</td>
             <td>{
-                status === 'unpaid' && <Link to={`/dashboard/payment/${_id}`}  className='btn btn-success'>Make Payment</Link>
-            }</td>
-            <td>{
-                status === 'unpaid' && <button onClick={handleShow} className='btn btn-danger'>Cancel</button>
-            }</td>
+                status === 'unpaid' && <Link to={`/dashboard/payment/${_id}`} className='btn btn-success'>Make Payment</Link>}{transactionId} {
+                    status === 'unpaid' && <button onClick={handleShow} className='btn btn-danger ms-3'>Cancel</button>
+                }</td>
             <Confirmation show={show} handleClose={handleClose} handleDelete={handleDelete} />
         </tr>
 

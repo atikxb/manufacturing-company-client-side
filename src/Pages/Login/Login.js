@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ButtonSpinner from '../Loading/ButtonSpinner';
 import Header from '../Shared/Header/Header';
@@ -57,17 +56,6 @@ const Login = () => {
                                 </form>
                                 <p className="text-center mt-4">Need an account? <Link to="/register">Register</Link></p>
                             </div>
-                            <ToastContainer
-                                position="top-center"
-                                autoClose={2000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                            />
                         </div>
                     </div>
                 </div>
