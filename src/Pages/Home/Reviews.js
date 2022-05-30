@@ -4,7 +4,7 @@ const Reviews = () => {
     return (
         <section id="testimonials" className="testimonials py-5">
             <div className="container">
-            <h1 className="text-center">Customer satisfaction</h1>
+            <h1 className="text-center">Reviews</h1>
                 <hr style={{ width: '50px', margin: '-5px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
                 <div className="row">
                     <div className="col-sm-4">

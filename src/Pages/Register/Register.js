@@ -16,6 +16,7 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [token] = useToken(user);
+    console.log(user?.user?.displayName);
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -44,7 +45,6 @@ const Register = () => {
         }
         else { setPasswordError('Both password did not match'); }
     }
-    console.log(user);
     return (
         <main>
             <Header/>

@@ -6,7 +6,7 @@ const SingleParts = ({ singleParts }) => {
     return (
         <div className="col-lg-4 mb-3">
             <div className="card h-100">
-                <div className="badge bg-danger text-white position-absolute mt-1 ms-1">Price: ${price}</div>
+                <div className="badge bg-primary text-white position-absolute mt-1 ms-1">Price: ${price}</div>
                 <img className="card-img-top" src={img} alt={name} />
                 <div className="card-body">
 

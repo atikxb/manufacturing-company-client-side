@@ -4,7 +4,7 @@ const BusinessOverview = () => {
     return (
         <section id="Business" className="py-5">
             <div className="container">
-                <h1 className="text-center">Business overview</h1>
+                <h1 className="text-center">Business summery</h1>
                 <hr style={{ width: '50px', margin: '-5px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
 
                 <div className="row">

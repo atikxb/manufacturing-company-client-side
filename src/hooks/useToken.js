@@ -1,18 +1,29 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const useToken = user => {
     const [token, setToken] = useState('');
+    console.log(token);
     useEffect(() => {//send token to backend and verify to let user access
-        const getToken = async () => {
-            const email = user?.user?.email;
-            if (email) {
-                const { data } = await axios.post(`http://localhost:5000/login`, { email });//get user token from api
-                setToken(data.accessToken);
-                localStorage.setItem('accessToken', data.accessToken);//set token to local storage              
-            }
+        const email = user?.user?.email;
+        const displayName = user?.user?.displayName;
+        const currentUser = { email: email, displayName: displayName };
+        if (email) {
+            fetch(`http://localhost:5000/user/${email}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const accessToken = data.token;
+                    localStorage.setItem('accessToken', accessToken);
+                    setToken(accessToken);
+                })
+
         }
-        getToken();
     }, [user]);
     return [token];
 };

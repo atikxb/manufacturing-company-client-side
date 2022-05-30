@@ -18,7 +18,6 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    console.log(user?.user?.displayName);
     const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
