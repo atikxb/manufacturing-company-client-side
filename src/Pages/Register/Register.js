@@ -41,7 +41,7 @@ const Register = () => {
     }
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/dashboard';
     useEffect(() => {//used useEffect to wait till currentUser and avoid browser router error
         token && navigate(from, { replace: true });
     }, [token, from, navigate]);
@@ -66,21 +66,21 @@ const Register = () => {
                                 <form onSubmit={handleRegister}>
 
                                     <div className="mb-3">
-                                        <label htmlFor="name" className="form-label">Name</label>
+                                        <label htmlhtmlFor="name" className="form-label">Name</label>
                                         <input onBlur={(e) => setDisplayName(e.target.value)} type="text" className="form-control" name="name" id="name" required />
                                     </div>
 
                                     <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Email</label>
+                                        <label htmlhtmlFor="email" className="form-label">Email</label>
                                         <input onBlur={(e) => setEmail(e.target.value)} type="email" className="form-control" name="email" id="email" required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="password" className="form-label">Password</label>
+                                        <label htmlhtmlFor="password" className="form-label">Password</label>
                                         <input onBlur={handlePasswordOnBlur} type="password" className="form-control" name="password" id="password" required />
                                         <p className='text-danger'>{passwordError}</p>
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="repassword" className="form-label">Retype Password</label>
+                                        <label htmlhtmlFor="repassword" className="form-label">Retype Password</label>
                                         <input onBlur={handleRePasswordOnBlur} type="password" className="form-control" name="repassword" id="repassword" required />
                                         <p className='text-danger'>{rePasswordError}</p>
                                     </div>

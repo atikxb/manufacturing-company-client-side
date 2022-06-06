@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_1mOWshLTI5MpRnKCqePuHEG600FVdGd5NS');
 const Payment = () => {
     const { id } = useParams();
     const { isLoading, refetch, data: order } = useQuery(['payment', id], () =>
-        fetch(`https://afternoon-savannah-56970.herokuapp.com/payment/${id}`, {
+        fetch(`http://localhost:5000//payment/${id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
@@ -22,9 +22,9 @@ const Payment = () => {
     );
     if (isLoading) { return <Loading /> }
     return (
-        <div class="continer py-5">
-            <div class="row justify-content-center">
-                <div class="col-sm-8">
+        <div className="continer py-5">
+            <div className="row justify-content-center">
+                <div className="col-sm-8">
                     <Card>
                         <Card.Header as="p">#{order._id}</Card.Header>
                         <Card.Body>

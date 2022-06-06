@@ -20,7 +20,7 @@ const SideNav = () => {
                     <li className="nav-item"><Link className="nav-link" to="/dashboard">My Profile</Link> </li>
                     {
                         admin ? <>
-                        <li className="nav-item"><Link className="nav-link" to="/dashboard/manage-all-products">Manage all Orders</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/dashboard/manage-orders">Manage all Orders</Link></li>
                     <li className="nav-item"><Link className="nav-link" to="/dashboard/add-product">Add a Product</Link></li>
                     <li className="nav-item"><Link className="nav-link" to="/dashboard/make-admin">Make Admin</Link></li>
                     <li className="nav-item"><Link className="nav-link" to="/dashboard/manage-products">Manage Products</Link></li>

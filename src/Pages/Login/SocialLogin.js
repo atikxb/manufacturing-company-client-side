@@ -10,7 +10,7 @@ const SocialLogin = () => {
     const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/dashboard';
     useEffect(() => {//used useEffect to wait till user and avoid browser router error
         token && navigate(from, { replace: true });
     }, [token, from, navigate]);

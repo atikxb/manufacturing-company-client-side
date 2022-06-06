@@ -24,8 +24,8 @@ const AddProduct = () => {
             .then(result => {
                 if (result.success) {
                     const img = result.data.url;
-                    const parts = { name, details, minQuantity, quantity, price, img };
-                    fetch('https://afternoon-savannah-56970.herokuapp.com/add-parts', {
+                    const parts = { name, details, minQuantity: parseInt(minQuantity), quantity: parseInt(quantity), price: parseInt(price), img };
+                    fetch('http://localhost:5000//add-parts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -42,32 +42,32 @@ const AddProduct = () => {
             });
     }
     return (
-        <div class="container py-5">
+        <div className="container py-5">
             <h1 className="text-center">Add new Parts</h1>
                     <hr style={{width: '100px',margin: '-5px auto 40px auto',height: '2px', backgroundColor: 'black'}}/>
-            <div class="row justify-content-center">
-                <div class="col-sm-8">
+            <div className="row justify-content-center">
+                <div className="col-sm-8">
                     <h2>Login</h2>
                     <form onSubmit={handleAdd}>
-                        <div class="mb-3">
-                            <input type="text" name='name' class="form-control" placeholder='Parts Name' required/>
+                        <div className="mb-3">
+                            <input type="text" name='name' className="form-control" placeholder='Parts Name' required/>
                         </div>
-                        <div class="mb-3">
-                            <input type="number" name='minQuantity' class="form-control" placeholder='Minimum Quantity' required/>
+                        <div className="mb-3">
+                            <input type="number" name='minQuantity' className="form-control" placeholder='Minimum Quantity' required/>
                         </div>
-                        <div class="mb-3">
-                            <input type="number" name='quantity' class="form-control" placeholder='Quantity' required/>
+                        <div className="mb-3">
+                            <input type="number" name='quantity' className="form-control" placeholder='Quantity' required/>
                         </div>
-                        <div class="mb-3">
-                            <input type="number" name='price' class="form-control" placeholder='Price' required/>
+                        <div className="mb-3">
+                            <input type="number" name='price' className="form-control" placeholder='Price' required/>
                         </div>
-                        <div class="mb-3">
-                            <input type="file" name='image' accept='image/*' class="form-control" placeholder='Image' required/>
+                        <div className="mb-3">
+                            <input type="file" name='image' accept='image/*' className="form-control" placeholder='Image' required/>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" name="details" placeholder='Details' cols="30" rows="10" required></textarea>
+                        <div className="mb-3">
+                            <textarea className="form-control" name="details" placeholder='Details' cols="30" rows="10" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit {loading && <ButtonSpinner />}</button>
+                        <button type="submit" className="btn btn-primary">Submit {loading && <ButtonSpinner />}</button>
                     </form>
                 </div>
             </div>

@@ -1,51 +1,43 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
-import OrderRow from './OrderRow';
+import ManageOrderRow from './ManageOrderRow';
 
-const MyOrders = () => {
-    const [user] = useAuthState(auth);
-    const { isLoading, refetch, data: myorders } = useQuery(['my-orders', user?.email], () =>
-        fetch(`http://localhost:5000//orders?email=${user?.email}`, {
+const ManageOrders = () => {
+    const { isLoading, refetch, data: orders } = useQuery('orders', () =>
+        fetch(`http://localhost:5000/all-orders`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth);
-                    localStorage.removeItem('accessToken');
-                }
-                return res.json();
-            })
+            .then(res => res.json())
     );
-
+    console.log(orders);
     if (isLoading) { return <Loading /> }
+
     return (
         <div className="container">
-            <h1 className="text-center">My Orders</h1>
-            <hr style={{ width: '100px', margin: '-5px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
+            <h1 className="text-center">Manage Orders</h1>
+            <hr style={{ width: '100px', margin: '0px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
             <div className="row">
                 <div className="order_table table-responsive">
                     <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Customer Name</th>
                                 <th scope="col">Parts Name</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Transaction</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
-                                myorders.map((order, index) => <OrderRow  key={order._id} order={order} index={index} refetch={refetch}/>)
+                                orders.map((order, index) => <ManageOrderRow  key={order._id} order={order} index={index} refetch={refetch}/>)
                             }
                         </tbody>
                     </table>
@@ -55,4 +47,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

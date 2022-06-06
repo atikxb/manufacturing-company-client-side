@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading';
 
 const MakeAdmin = () => {
     const { isLoading, refetch, data: users } = useQuery('users', () =>
-        fetch(`https://afternoon-savannah-56970.herokuapp.com/users`, {
+        fetch(`http://localhost:5000//users`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,7 +15,7 @@ const MakeAdmin = () => {
             )
     );
     const makeAdmin = email => {
-        fetch(`https://afternoon-savannah-56970.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000//user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -42,8 +42,8 @@ const MakeAdmin = () => {
         <div className='container py-5'>
             <h1 className="text-center">All Users</h1>
             <hr style={{ width: '100px', margin: '-5px auto 40px auto', height: '2px', backgroundColor: 'black' }} />
-            <div class="row">
-                <table class="table table-striped">
+            <div className="row">
+                <table className="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>

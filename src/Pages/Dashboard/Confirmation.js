@@ -13,7 +13,7 @@ const Confirmation = ({ show, handleClose, handleDelete }) => {
                 <Modal.Title>Are you sure</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                Once you cancel, order can never be restored.
+                Its can never be restored.
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>Go back</Button>

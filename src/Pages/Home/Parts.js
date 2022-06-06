@@ -1,9 +1,11 @@
 import React from 'react';
 import useParts from '../../hooks/useParts';
+import Loading from '../Loading/Loading';
 import SingleParts from './SingleParts';
 
 const Parts = () => {
-    const [parts] = useParts();
+    const [parts, isLoading] = useParts();
+    if (isLoading) { return <Loading /> }
     return (
         <section id='parts' className="py-5">
             <div className="container">

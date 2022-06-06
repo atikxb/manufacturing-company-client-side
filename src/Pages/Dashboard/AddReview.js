@@ -9,7 +9,7 @@ const AddReview = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = async data => {
         const review = {name: user?.displayName || user?.email, rating: data.rating, review: data.review};
-        fetch('https://afternoon-savannah-56970.herokuapp.com/review', {
+        fetch('http://localhost:5000//review', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -33,12 +33,12 @@ const AddReview = () => {
                                 <form onSubmit={handleSubmit(onSubmit)}>
 
                                     <div className="mb-3">
-                                        <label htmlFor="rating" className="form-label">Rating (1-5)</label>
+                                        <label htmlhtmlFor="rating" className="form-label">Rating (1-5)</label>
                                         <input {...register("rating", { required: true})} type="number" min="1" max="5" className="form-control" id="rating" />
                                         <p className='text-danger mt-2'>{errors.rating && <span>Please choose youu desired rating</span>}</p>
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="review" className="form-label">review</label>
+                                        <label htmlhtmlFor="review" className="form-label">review</label>
                                         <textarea className="form-control" {...register("review", { required: true })} id="review" cols="30" rows="10"></textarea>
                                         <p className='text-danger mt-2'>{errors.review && <span>Please input the review</span>}</p>
                                     </div>

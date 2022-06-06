@@ -9,7 +9,7 @@ const OrderRow = ({ index, order, refetch }) => {
     const handleShow = () => setShow(true);
     const { _id, partsName, price, quantity, status, transactionId } = order;
     const handleDelete = () => {
-        fetch(`https://afternoon-savannah-56970.herokuapp.com/order/${_id}`, {
+        fetch(`http://localhost:5000//order/${_id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

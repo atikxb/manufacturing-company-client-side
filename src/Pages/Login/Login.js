@@ -20,7 +20,7 @@ const Login = () => {
     const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/dashboard';
     useEffect(() => {//used useEffect to wait till currentUser and avoid browser router error
         token && navigate(from, { replace: true });
     }, [token, from, navigate]);
@@ -40,12 +40,12 @@ const Login = () => {
                                 <form onSubmit={handleSubmit(onSubmit)}>
 
                                     <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Email</label>
+                                        <label htmlhtmlFor="email" className="form-label">Email</label>
                                         <input {...register("email", { required: true, pattern: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i })} type="email" className="form-control" id="email" />
                                         <p className='text-danger mt-2'>{errors.email && <span>Please input a valid email</span>}</p>
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="password" className="form-label">Password</label>
+                                        <label htmlhtmlFor="password" className="form-label">Password</label>
                                         <input {...register("password", { required: true })} type="password" className="form-control" id="password" />
                                         <p className='text-danger mt-2'>{errors.password && <span>Please input the password</span>}</p>
                                     </div>
